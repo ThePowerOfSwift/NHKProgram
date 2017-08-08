@@ -35,7 +35,7 @@
 		3E1EECEA1F39A66D00F8E103 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1EECCE1F399F4A00F8E103 /* RxCocoa.framework */; };
 		3E1EECEB1F39A66D00F8E103 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1EECCF1F399F4A00F8E103 /* RxSwift.framework */; };
 		3E2042FF1F3960FC00950442 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2042FE1F3960FC00950442 /* AppDelegate.swift */; };
-		3E2043031F39613200950442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2043021F39613200950442 /* Main.storyboard */; };
+		3E2D2A1A1F39CCDA00378612 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2D2A1C1F39CCDA00378612 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,8 +107,8 @@
 		3E2042E81F39609A00950442 /* NHKProgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NHKProgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2042F71F39609A00950442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E2042FE1F3960FC00950442 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3E2043021F39613200950442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3E2043041F39616C00950442 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		3E2D2A1D1F39CCE200378612 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,7 +305,7 @@
 		3E2043011F39612C00950442 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3E2043021F39613200950442 /* Main.storyboard */,
+				3E2D2A1C1F39CCDA00378612 /* Main.storyboard */,
 				3E1EECC41F399D7E00F8E103 /* LaunchScreen.storyboard */,
 				3E1EEC8C1F399A4F00F8E103 /* Assets.xcassets */,
 			);
@@ -452,11 +452,10 @@
 			};
 			buildConfigurationList = 3E2042E31F39609A00950442 /* Build configuration list for PBXProject "NHKProgram" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = Japanese;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
-				Base,
+				ja,
 			);
 			mainGroup = 3E2042DF1F39609A00950442;
 			productRefGroup = 3E2042E91F39609A00950442 /* Products */;
@@ -500,7 +499,7 @@
 			files = (
 				3E1EECC51F399D7E00F8E103 /* LaunchScreen.storyboard in Resources */,
 				3E1EEC8D1F399A4F00F8E103 /* Assets.xcassets in Resources */,
-				3E2043031F39613200950442 /* Main.storyboard in Resources */,
+				3E2D2A1A1F39CCDA00378612 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +555,17 @@
 			targetProxy = 3E1EECBB1F399D2C00F8E103 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3E2D2A1C1F39CCDA00378612 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E2D2A1D1F39CCE200378612 /* ja */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3E1EEC9D1F399AE500F8E103 /* Debug */ = {
@@ -705,6 +715,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -756,6 +767,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -840,6 +852,7 @@
 				3E1EEC9E1F399AE500F8E103 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3E1EECAE1F399D1400F8E103 /* Build configuration list for PBXNativeTarget "Domain" */ = {
 			isa = XCConfigurationList;
@@ -848,6 +861,7 @@
 				3E1EECB01F399D1400F8E103 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3E1EECBF1F399D2C00F8E103 /* Build configuration list for PBXNativeTarget "Data" */ = {
 			isa = XCConfigurationList;
@@ -856,6 +870,7 @@
 				3E1EECC11F399D2C00F8E103 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3E2042E31F39609A00950442 /* Build configuration list for PBXProject "NHKProgram" */ = {
 			isa = XCConfigurationList;
