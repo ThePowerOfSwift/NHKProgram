@@ -1,7 +1,64 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hff-5n-ood">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--[m月d日の番組表]-->
+        <scene sceneID="yQe-Qb-N8o">
+            <objects>
+                <tableViewController id="h9O-br-iej" customClass="ProgramListTableViewController" customModule="Presentation" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="F9Y-Ri-RZi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="h9O-br-iej" id="2s9-CS-AO7"/>
+                            <outlet property="delegate" destination="h9O-br-iej" id="YEK-v2-8kQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="[m月d日の番組表]" id="H95-Sl-uaH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="5rH-ig-Nmn"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="refreshButton" destination="5rH-ig-Nmn" id="nGg-yE-7KZ"/>
+                        <segue destination="MJI-wC-jZq" kind="presentation" identifier="toProgram" id="NZQ-Xr-bdp"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Qj-cV-hzU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="300"/>
+        </scene>
+        <!--ProgramDetail-->
+        <scene sceneID="Sbj-4T-2UM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProgramDetail" id="MJI-wC-jZq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cdY-7f-1mj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1625" y="300"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aX5-NA-rxt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hff-5n-ood" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vqf-Be-EO4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="h9O-br-iej" kind="relationship" relationship="rootViewController" id="LsU-oN-2yW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rpw-q9-caa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277.60000000000002" y="300"/>
+        </scene>
+    </scenes>
 </document>

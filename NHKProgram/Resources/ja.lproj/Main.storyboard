@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-505" y="341"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--ProgramList-->
         <scene sceneID="qoh-j0-BQb">
             <objects>
-                <viewControllerPlaceholder id="CBf-Bg-5dV" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ProgramList" bundleIdentifier="com.opuappnavi.NHKProgram.Presentation" id="CBf-Bg-5dV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="PsE-RH-Moi"/>
                     <navigationItem key="navigationItem" id="NXu-H7-sXD"/>
                 </viewControllerPlaceholder>
