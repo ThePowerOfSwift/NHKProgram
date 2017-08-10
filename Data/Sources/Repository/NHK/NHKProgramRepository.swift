@@ -6,7 +6,7 @@ import SwiftyJSON
 
 import Domain
 
-private let endpoint = "http://api.nhk.or.jp"
+private let endpoint = "https://api.nhk.or.jp"
 
 public final class NHKProgramRepository: ProgramRepositoryInterface {
     private let area: Area
@@ -15,6 +15,18 @@ public final class NHKProgramRepository: ProgramRepositoryInterface {
     public init(area: Area, service: Service) {
         self.area = area
         self.service = service
+    }
+    
+    public func loadProgram(id: String) -> Observable<Program> {
+        let area = self.area, service = self.service
+        guard let url = URL(string: "\(endpoint)/v2/pg/info/\(area.rawValue)/\(service.rawValue)/\(id).json?key=\(NHKSecret.apiKey)") else {
+            return Observable.error(AppError.illegalArgument)
+        }
+        
+        return makeCommonJSONURLSession(url: url).map { obj -> Program in
+            guard let program = obj["list"][service.rawValue].array?.first else { throw WebAPIError.illegalResponse }
+            return try NHKProgramRepository.toDomainObject(from: program)
+        }
     }
     
     public func loadDailyProgramList(year: Int, month: Int, day: Int) -> Observable<[Program]> {
@@ -27,17 +39,26 @@ public final class NHKProgramRepository: ProgramRepositoryInterface {
             return Observable.error(AppError.illegalArgument)
         }
         
-        
+        return makeCommonJSONURLSession(url: url).map { obj -> [Program] in
+            guard let programs = obj["list"][service.rawValue].array else { throw WebAPIError.illegalResponse }
+            return try programs.map(NHKProgramRepository.toDomainObject)
+        }
+    }
+    
+    private func makeCommonJSONURLSession(url: URL) -> Observable<JSON> {
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
-        return session.rx.data(request: URLRequest(url: url))
+        
+        return session.rx.response(request: URLRequest(url: url))
+            .map { response, data -> Data in
+                switch response.statusCode {
+                case 200 ..< 300: return data
+                case 400 ..< 500: throw WebAPIError.notFound
+                default: throw WebAPIError.unknown
+                }
+            }
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .userInitiated))
-            .catchError { _ in Observable.error(WebAPIError.unknown) }
-            .map { JSON(data: $0) }
-            .map { obj -> [Program] in
-                guard let programs = obj["list"][service.rawValue].array else { throw WebAPIError.illegalResponse }
-                return try programs.map(NHKProgramRepository.toDomainObject)
-        }
+            .map { JSON.init(data: $0) }
     }
     
     private static func toDomainObject(from json: JSON) throws -> Program {
@@ -59,7 +80,15 @@ public final class NHKProgramRepository: ProgramRepositoryInterface {
             throw WebAPIError.illegalResponse
         }
         
-        return Program(id: id, startTime: startTime, endTime: endTime, title: title, subtitle: subtitle)
+        return Program(
+            id: id,
+            startTime: startTime,
+            endTime: endTime,
+            title: title,
+            subtitle: subtitle,
+            logoImageURL: json["program_logo"]["url"].string.flatMap { URL.init(string: "https:\($0)") },
+            content: json["content"].string
+        )
     }
 }
 

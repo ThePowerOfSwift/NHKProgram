@@ -27,7 +27,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="refreshButton" destination="5rH-ig-Nmn" id="nGg-yE-7KZ"/>
-                        <segue destination="MJI-wC-jZq" kind="presentation" identifier="toProgram" id="NZQ-Xr-bdp"/>
+                        <segue destination="MJI-wC-jZq" kind="show" identifier="toProgram" id="NZQ-Xr-bdp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Qj-cV-hzU" userLabel="First Responder" sceneMemberID="firstResponder"/>

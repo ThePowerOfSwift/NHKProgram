@@ -19,6 +19,13 @@ public final class ProgramListTableViewController: UITableViewController {
         bindViewModel()
     }
     
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let segue = R.segue.programListTableViewController.toProgram(segue: segue) {
+            guard let program = sender as? Program else { fatalError() }
+            segue.destination.set(id: program.id)
+        }
+    }
+    
     private func bindViewModel() {
         let input = ProgramListViewModel.Input(refresh: refreshButton.rx.tap.asDriver(), showDetail: tableView.rx.itemSelected.asDriver())
         let output = viewModel.transform(from: input)

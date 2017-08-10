@@ -28,13 +28,32 @@ extension SwinjectStoryboard {
         c.storyboardInitCompleted(ProgramListTableViewController.self) { r, vc in
             vc.viewModel = ProgramListViewModel(with: r.resolve(ProgramListUseCaseInterface.self)!, with: ProgramListNavigator(with: vc))
         }
+        c.storyboardInitCompleted(ProgramDetailTableViewController.self) { r, vc in
+            vc.viewModelFactory = Factory<ProgramDetailViewModel>.From<String> { id in
+                ProgramDetailViewModel(
+                    for: id,
+                    with: r.resolve(Factory<ProgramDetailUseCaseInterface>.From<String>.self)!,
+                    with: ProgramDetailNavigator(with: vc)
+                )
+            }
+        }
         
         // UseCase
+        c.register(Factory<ProgramDetailUseCaseInterface>.From<String>.self) { r in
+            Factory<ProgramDetailUseCaseInterface>.From<String>(factoryMethod: { id in
+                ProgramDetailUseCase(
+                    for: id,
+                    with: r.resolve(ProgramRepositoryInterface.self)!,
+                    with: r.resolve(ImageRepositoryInterface.self)!
+                )
+            })
+        }
         c.autoregister(ProgramListUseCaseInterface.self, initializer: ProgramListUseCase.init).inObjectScope(.container)
         
         
         // Repository
         c.autoregister(ProgramRepositoryInterface.self, initializer: NHKProgramRepository.init)
+        c.autoregister(ImageRepositoryInterface.self, initializer: FoundationImageRepository.init)
         
     }
 }

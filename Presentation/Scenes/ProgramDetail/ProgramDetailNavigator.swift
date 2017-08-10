@@ -7,13 +7,9 @@ import Domain
 
 public final class ProgramDetailNavigator {
     
-    private weak var viewController: ProgramDetailViewController?
+    private weak var viewController: ProgramDetailTableViewController?
     
-    public init(with viewController: ProgramDetailViewController) {
+    public init(with viewController: ProgramDetailTableViewController) {
         self.viewController = viewController
-    }
-    
-    func toProgramDetail(program: Program) {
-        //        viewController?.performSegue(withIdentifier: R.segue., sender: <#T##Any?#>)
     }
 }
