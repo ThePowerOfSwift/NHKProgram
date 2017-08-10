@@ -12,6 +12,7 @@ public final class ProgramListViewModel: ViewModel {
         let showDetail: Driver<IndexPath>
     }
     struct Output {
+        let sceneTitle: Driver<String>
         let todayProgramList: Driver<[Program]>
         let currentProgramIndex: Driver<Int?>
         let refreshed: Driver<Void>
@@ -35,6 +36,10 @@ public final class ProgramListViewModel: ViewModel {
     }
     
     func transform(from input: Input) -> Output {
+        let sceneTitle = programListUseCase.todayProgramList.map {
+            ($0.first?.startTime).map { "\($0.month)月\($0.day)日の番組表" } ?? ""
+        }
+        
         let todayProgramList = programListUseCase.todayProgramList
         todayProgramList.map { programs in
             let enumeratedPrograms = programs.enumerated()
@@ -71,8 +76,9 @@ public final class ProgramListViewModel: ViewModel {
         }).mapToVoid()
         
         return Output(
-            todayProgramList: todayProgramList.asDriver(onErrorJustReturn: []),
-            currentProgramIndex: currentProgramIndex.asDriver(onErrorJustReturn: nil),
+            sceneTitle: sceneTitle.asDriverOnErrorJustComplete(),
+            todayProgramList: todayProgramList.asDriverOnErrorJustComplete(),
+            currentProgramIndex: currentProgramIndex.asDriverOnErrorJustComplete(),
             refreshed: refreshed,
             detailShown: detailShown
         )

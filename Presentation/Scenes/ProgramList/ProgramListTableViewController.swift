@@ -22,10 +22,15 @@ public final class ProgramListTableViewController: UITableViewController {
     private func bindViewModel() {
         let input = ProgramListViewModel.Input(refresh: refreshButton.rx.tap.asDriver(), showDetail: tableView.rx.itemSelected.asDriver())
         let output = viewModel.transform(from: input)
+        output.sceneTitle.drive(onNext: sceneTitleDidChange).disposed(by: bag)
         output.todayProgramList.drive(onNext: programsDidLoad).disposed(by: bag)
         output.currentProgramIndex.drive(onNext: currentProgramIndexDidChanged).disposed(by: bag)
         output.detailShown.drive().disposed(by: bag)
         output.refreshed.drive().disposed(by: bag)
+    }
+    
+    private func sceneTitleDidChange(_ title: String) {
+        navigationItem.title = title
     }
     
     private func programsDidLoad(_ programs: [Program]) {
