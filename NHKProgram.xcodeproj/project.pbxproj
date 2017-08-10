@@ -68,6 +68,9 @@
 		3ED2D0491F3A03A4007AC2A9 /* SwinjectAutoregistration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED2D0441F3A03A4007AC2A9 /* SwinjectAutoregistration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3ED2D04A1F3A03A4007AC2A9 /* SwinjectStoryboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED2D0451F3A03A4007AC2A9 /* SwinjectStoryboard.framework */; };
 		3ED2D04B1F3A03A4007AC2A9 /* SwinjectStoryboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED2D0451F3A03A4007AC2A9 /* SwinjectStoryboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3ED2D04D1F3A0C0E007AC2A9 /* RxSwift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED2D04C1F3A0C0E007AC2A9 /* RxSwift+Extension.swift */; };
+		3ED2D0511F3C5882007AC2A9 /* Reactive+UIView+backgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED2D0501F3C5882007AC2A9 /* Reactive+UIView+backgroundColor.swift */; };
+		3ED2D0531F3C7DE6007AC2A9 /* Sequence+forEachMutating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED2D0521F3C7DE6007AC2A9 /* Sequence+forEachMutating.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +184,9 @@
 		3ED2D0431F3A03A4007AC2A9 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		3ED2D0441F3A03A4007AC2A9 /* SwinjectAutoregistration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwinjectAutoregistration.framework; path = Carthage/Build/iOS/SwinjectAutoregistration.framework; sourceTree = "<group>"; };
 		3ED2D0451F3A03A4007AC2A9 /* SwinjectStoryboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwinjectStoryboard.framework; path = Carthage/Build/iOS/SwinjectStoryboard.framework; sourceTree = "<group>"; };
+		3ED2D04C1F3A0C0E007AC2A9 /* RxSwift+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Extension.swift"; sourceTree = "<group>"; };
+		3ED2D0501F3C5882007AC2A9 /* Reactive+UIView+backgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+UIView+backgroundColor.swift"; sourceTree = "<group>"; };
+		3ED2D0521F3C7DE6007AC2A9 /* Sequence+forEachMutating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sequence+forEachMutating.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,6 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				3ED2D0231F39DE0A007AC2A9 /* ViewModel.swift */,
+				3ED2D0501F3C5882007AC2A9 /* Reactive+UIView+backgroundColor.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -500,6 +507,8 @@
 			isa = PBXGroup;
 			children = (
 				3ED2D0411F3A0108007AC2A9 /* Factory.swift */,
+				3ED2D04C1F3A0C0E007AC2A9 /* RxSwift+Extension.swift */,
+				3ED2D0521F3C7DE6007AC2A9 /* Sequence+forEachMutating.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -744,6 +753,7 @@
 				3ED2D0141F39D69F007AC2A9 /* ProgramTableViewCell.swift in Sources */,
 				3E1EECE91F39A5D000F8E103 /* ProgramListTableViewController.swift in Sources */,
 				3ED2D02D1F39E094007AC2A9 /* ProgramDetailNavigator.swift in Sources */,
+				3ED2D0511F3C5882007AC2A9 /* Reactive+UIView+backgroundColor.swift in Sources */,
 				3ED2D0291F39E07E007AC2A9 /* ProgramDetailViewController.swift in Sources */,
 				3ED2D0211F39D7DF007AC2A9 /* R.generated.swift in Sources */,
 				3ED2D0041F39D251007AC2A9 /* ProgramListViewModel.swift in Sources */,
@@ -762,6 +772,8 @@
 				3ED2D0421F3A0108007AC2A9 /* Factory.swift in Sources */,
 				3ED2D00B1F39D2B8007AC2A9 /* ProgramUseCase.swift in Sources */,
 				3ED2D0391F39ECC2007AC2A9 /* Errors.swift in Sources */,
+				3ED2D04D1F3A0C0E007AC2A9 /* RxSwift+Extension.swift in Sources */,
+				3ED2D0531F3C7DE6007AC2A9 /* Sequence+forEachMutating.swift in Sources */,
 				3ED2D00F1F39D3B2007AC2A9 /* Program.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,7 +6,7 @@ import SwiftyJSON
 
 import Domain
 
-private let endpoint = "http://api.nhk.or.jp/v2/pg/list"
+private let endpoint = "http://api.nhk.or.jp"
 
 public final class NHKProgramRepository: ProgramRepositoryInterface {
     private let area: Area
@@ -21,9 +21,9 @@ public final class NHKProgramRepository: ProgramRepositoryInterface {
         let y = String(format: "%04d", year)
         let m = String(format: "%02d", month)
         let d = String(format: "%02d", day)
-        let area = self.area
+        let service = self.service
         
-        guard let url = URL(string: "\(endpoint)/\(area.rawValue)/\(service.rawValue)/\(y)-\(m)-\(d).json?key=\(NHKSecret.apiKey)") else {
+        guard let url = URL(string: "\(endpoint)/v2/pg/list/\(area.rawValue)/\(service.rawValue)/\(y)-\(m)-\(d).json?key=\(NHKSecret.apiKey)") else {
             return Observable.error(AppError.illegalArgument)
         }
         
@@ -35,7 +35,7 @@ public final class NHKProgramRepository: ProgramRepositoryInterface {
             .catchError { _ in Observable.error(WebAPIError.unknown) }
             .map { JSON(data: $0) }
             .map { obj -> [Program] in
-                guard let programs = obj["list"][area.rawValue].array else { return [] }
+                guard let programs = obj["list"][service.rawValue].array else { throw WebAPIError.illegalResponse }
                 return try programs.map(NHKProgramRepository.toDomainObject)
         }
     }
