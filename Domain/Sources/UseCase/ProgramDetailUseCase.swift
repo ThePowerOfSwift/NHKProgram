@@ -4,7 +4,7 @@ import RxSwift
 import RxCocoa
 
 public protocol ProgramDetailUseCaseInterface: class {
-    var program: Observable<Program> { get }
+    var program: Observable<Program?> { get }
     var isLoading: Observable<Bool> { get }
     var imageData: Observable<Data?> { get }
     var isImageLoading: Observable<Bool> { get }
@@ -24,13 +24,13 @@ public final class ProgramDetailUseCase: ProgramDetailUseCaseInterface {
         self.imageRepository = imageRepository
     }
     
-    private let _program = PublishSubject<Program>()
-    public var program: Observable<Program> { return _program }
+    private let _program = BehaviorSubject<Program?>(value: nil)
+    public var program: Observable<Program?> { return _program }
     
     private let _isLoading = BehaviorSubject<Bool>(value: false)
     public var isLoading: Observable<Bool> { return _isLoading }
     
-    private var _imageData = PublishSubject<Data?>()
+    private var _imageData = BehaviorSubject<Data?>(value: nil)
     public var imageData: Observable<Data?> { return _imageData }
     
     private var _isImageLoading = BehaviorSubject<Bool>(value: false)

@@ -13,7 +13,7 @@ public final class ProgramDetailViewModel: ViewModel {
     struct Output {
         let isLoading: Driver<Bool>
         let isImageLoading: Driver<Bool>
-        let program: Driver<Program>
+        let program: Driver<Program?>
         let programTitle: Driver<String>
         let programLogoImage: Driver<UIImage?>
     }
@@ -55,23 +55,27 @@ public final class ProgramDetailViewModel: ViewModel {
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "MMddhhmmss", options: 0, locale: Locale.current)
         
         program
+            .filterNil()
             .map { RightDetailTableViewCell.Data(title: "開始時刻", rightText: formatter.string(from: $0.startTime)) }
             .drive(state.startTimeData)
             .disposed(by: bag)
         program
+            .filterNil()
             .map { RightDetailTableViewCell.Data(title: "終了時刻", rightText: formatter.string(from: $0.endTime)) }
             .drive(state.endTimeData)
             .disposed(by: bag)
         program
+            .filterNil()
             .map { RightDetailTableViewCell.Data(title: "サブタイトル", rightText: $0.subtitle) }
             .drive(state.subtitleData)
             .disposed(by: bag)
         program
+            .filterNil()
             .map { RightDetailTableViewCell.Data(title: "内容", rightText: $0.content ?? "") }
             .drive(state.contentData)
             .disposed(by: bag)
         
-        let programTitle = Driver.combineLatest(program, isLoading) { program, isLoading in isLoading ? "読み込み中・・・" : program.title }
+        let programTitle = Driver.combineLatest(program, isLoading) { program, isLoading in isLoading ? "読み込み中・・・" : (program?.title ?? "") }
         
         let programLogoImage = programDetailUseCase.imageData.map { $0.flatMap(UIImage.init) }.asDriverOnErrorJustComplete()
         

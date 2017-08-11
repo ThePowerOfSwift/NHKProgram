@@ -35,7 +35,7 @@ public final class ProgramDetailTableViewController: UITableViewController {
         output.programLogoImage.drive(logoImageView.rx.image).disposed(by: bag)
     }
     
-    private func programDidChange(_ program: Program) {
+    private func programDidChange(_ program: Program?) {
         tableView.reloadData()
     }
     
