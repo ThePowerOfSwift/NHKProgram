@@ -9,6 +9,8 @@ import Domain
 
 public final class NHKProgramRepository: ProgramRepositoryInterface {
     
+    public init() {}
+    
     public func loadDailyProgramList(year: Int, month: Int, day: Int) -> Observable<[Program]> {
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
