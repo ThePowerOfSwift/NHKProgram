@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36E8FF451F666C740015D449 /* ProgramListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36E8FF441F666C740015D449 /* ProgramListStoryboard.storyboard */; };
+		36E8FF471F666C9D0015D449 /* ProgramListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8FF461F666C9D0015D449 /* ProgramListModel.swift */; };
+		36E8FF491F6673A60015D449 /* ProgramListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8FF481F6673A60015D449 /* ProgramListTableViewController.swift */; };
+		36E8FF4E1F6675020015D449 /* ProgramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8FF4C1F6675020015D449 /* ProgramTableViewCell.swift */; };
+		36E8FF4F1F6675020015D449 /* ProgramTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36E8FF4D1F6675020015D449 /* ProgramTableViewCell.xib */; };
 		3E1EEC8D1F399A4F00F8E103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E1EEC8C1F399A4F00F8E103 /* Assets.xcassets */; };
 		3E1EEC971F399AE500F8E103 /* Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E1EEC951F399AE500F8E103 /* Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E1EEC9A1F399AE500F8E103 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1EEC931F399AE500F8E103 /* Presentation.framework */; };
@@ -92,6 +97,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		36E8FF441F666C740015D449 /* ProgramListStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProgramListStoryboard.storyboard; sourceTree = "<group>"; };
+		36E8FF461F666C9D0015D449 /* ProgramListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramListModel.swift; sourceTree = "<group>"; };
+		36E8FF481F6673A60015D449 /* ProgramListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramListTableViewController.swift; sourceTree = "<group>"; };
+		36E8FF4C1F6675020015D449 /* ProgramTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramTableViewCell.swift; sourceTree = "<group>"; };
+		36E8FF4D1F6675020015D449 /* ProgramTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgramTableViewCell.xib; sourceTree = "<group>"; };
 		3E1EEC8C1F399A4F00F8E103 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E1EEC931F399AE500F8E103 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1EEC951F399AE500F8E103 /* Presentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Presentation.h; sourceTree = "<group>"; };
@@ -170,6 +180,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36E8FF3F1F666ABB0015D449 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				36E8FF431F666C740015D449 /* ProgramList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		36E8FF401F666AC50015D449 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		36E8FF431F666C740015D449 /* ProgramList */ = {
+			isa = PBXGroup;
+			children = (
+				36E8FF441F666C740015D449 /* ProgramListStoryboard.storyboard */,
+				36E8FF461F666C9D0015D449 /* ProgramListModel.swift */,
+				36E8FF481F6673A60015D449 /* ProgramListTableViewController.swift */,
+			);
+			name = ProgramList;
+			path = Presentation/Scenes/ProgramList;
+			sourceTree = SOURCE_ROOT;
+		};
+		36E8FF4A1F6674C80015D449 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				36E8FF4B1F6674C80015D449 /* ProgramTableViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		36E8FF4B1F6674C80015D449 /* ProgramTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				36E8FF4C1F6675020015D449 /* ProgramTableViewCell.swift */,
+				36E8FF4D1F6675020015D449 /* ProgramTableViewCell.xib */,
+			);
+			path = ProgramTableViewCell;
+			sourceTree = "<group>";
+		};
 		3E1EEC8B1F3999F400F8E103 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +241,9 @@
 		3E1EEC941F399AE500F8E103 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				36E8FF4A1F6674C80015D449 /* Views */,
+				36E8FF401F666AC50015D449 /* Resources */,
+				36E8FF3F1F666ABB0015D449 /* Scenes */,
 				3E1EECCB1F399E6500F8E103 /* Sources */,
 				3E1EECC61F399E2900F8E103 /* Others */,
 			);
@@ -498,6 +554,7 @@
 					3E1EEC921F399AE500F8E103 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = F9VCJL39J2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					3E1EECA41F399D1400F8E103 = {
@@ -545,6 +602,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36E8FF4F1F6675020015D449 /* ProgramTableViewCell.xib in Resources */,
+				36E8FF451F666C740015D449 /* ProgramListStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +638,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36E8FF491F6673A60015D449 /* ProgramListTableViewController.swift in Sources */,
+				36E8FF471F666C9D0015D449 /* ProgramListModel.swift in Sources */,
+				36E8FF4E1F6675020015D449 /* ProgramTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +694,7 @@
 		3E1EEC9D1F399AE500F8E103 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -649,6 +712,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.opuappnavi.NHKProgram.Presentation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -658,6 +722,7 @@
 		3E1EEC9E1F399AE500F8E103 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
