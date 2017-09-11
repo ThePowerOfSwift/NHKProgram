@@ -32,6 +32,8 @@
 		3E1EECE31F399F4A00F8E103 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1EECD31F399F4A00F8E103 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3E2042FF1F3960FC00950442 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2042FE1F3960FC00950442 /* AppDelegate.swift */; };
 		3E2043031F39613200950442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2043021F39613200950442 /* Main.storyboard */; };
+		3E7653E81F666573005CF478 /* MockProgramRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7653E71F666573005CF478 /* MockProgramRepository.swift */; };
+		3E7653E91F6665FC005CF478 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1EECD11F399F4A00F8E103 /* SwiftDate.framework */; };
 		3ED6D3BB1F5D2EF60052B5A5 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED6D3BA1F5D2EF60052B5A5 /* Program.swift */; };
 		3ED6D3BD1F5D34C60052B5A5 /* ProgramListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED6D3BC1F5D34C60052B5A5 /* ProgramListUseCase.swift */; };
 		3ED6D3BE1F5D35520052B5A5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1EECCE1F399F4A00F8E103 /* RxCocoa.framework */; };
@@ -114,6 +116,7 @@
 		3E2042FE1F3960FC00950442 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E2043021F39613200950442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3E2043041F39616C00950442 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		3E7653E71F666573005CF478 /* MockProgramRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockProgramRepository.swift; sourceTree = "<group>"; };
 		3ED6D3BA1F5D2EF60052B5A5 /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		3ED6D3BC1F5D34C60052B5A5 /* ProgramListUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramListUseCase.swift; sourceTree = "<group>"; };
 		3ED6D3C41F5D39D70052B5A5 /* ProgramRepositoryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramRepositoryInterface.swift; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ED6D3C31F5D35610052B5A5 /* RxSwift.framework in Frameworks */,
+				3E7653E91F6665FC005CF478 /* SwiftDate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +242,7 @@
 		3E1EECC91F399E5900F8E103 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				3E7653E41F666538005CF478 /* Repository */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -318,6 +323,30 @@
 				3E1EEC8C1F399A4F00F8E103 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		3E7653E41F666538005CF478 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3E7653E51F666538005CF478 /* Mock */,
+				3E7653E61F666538005CF478 /* NHK */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		3E7653E51F666538005CF478 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				3E7653E71F666573005CF478 /* MockProgramRepository.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		3E7653E61F666538005CF478 /* NHK */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NHK;
 			sourceTree = "<group>";
 		};
 		3ED6D3B61F5D2D620052B5A5 /* Entity */ = {
@@ -480,6 +509,7 @@
 					3E1EECB51F399D2C00F8E103 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = F9VCJL39J2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					3E2042E71F39609A00950442 = {
@@ -566,6 +596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E7653E81F666573005CF478 /* MockProgramRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,6 +739,7 @@
 		3E1EECC01F399D2C00F8E103 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -725,6 +757,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.opuappnavi.NHKProgram.Data;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -734,6 +767,7 @@
 		3E1EECC11F399D2C00F8E103 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
