@@ -43,6 +43,7 @@
 		3ED6D3C21F5D355A0052B5A5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1EECCF1F399F4A00F8E103 /* RxSwift.framework */; };
 		3ED6D3C31F5D35610052B5A5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1EECCF1F399F4A00F8E103 /* RxSwift.framework */; };
 		3ED6D3C51F5D39D70052B5A5 /* ProgramRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED6D3C41F5D39D70052B5A5 /* ProgramRepositoryInterface.swift */; };
+		FC93E9481F666A960020C0C2 /* NHKProgramRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC93E9471F666A960020C0C2 /* NHKProgramRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		3ED6D3BA1F5D2EF60052B5A5 /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		3ED6D3BC1F5D34C60052B5A5 /* ProgramListUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramListUseCase.swift; sourceTree = "<group>"; };
 		3ED6D3C41F5D39D70052B5A5 /* ProgramRepositoryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramRepositoryInterface.swift; sourceTree = "<group>"; };
+		FC93E9471F666A960020C0C2 /* NHKProgramRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NHKProgramRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +347,7 @@
 		3E7653E61F666538005CF478 /* NHK */ = {
 			isa = PBXGroup;
 			children = (
+				FC93E9471F666A960020C0C2 /* NHKProgramRepository.swift */,
 			);
 			path = NHK;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC93E9481F666A960020C0C2 /* NHKProgramRepository.swift in Sources */,
 				3E7653E81F666573005CF478 /* MockProgramRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
