@@ -32,7 +32,7 @@ class ProgramListTableViewController: UIViewController {
     
     
     private func initializeModel() {
-        self.model = ProgramListModel(programListUsecase: ProgramListUseCase(programRepository: MockProgramRepository()))
+        self.model = ProgramListModel(programListUsecase: ProgramListUseCase(programRepository: NHKProgramRepository()))
     }
     
     private func initializeTableView(){
